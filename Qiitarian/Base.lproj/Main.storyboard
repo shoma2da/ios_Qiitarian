@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Item 1-->
+        <!--View Controller - 最新情報-->
         <scene sceneID="ONr-T6-7PS">
             <objects>
                 <viewController id="qk1-Fd-JQI" sceneMemberID="viewController">
@@ -24,7 +24,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="VT3-9c-1Dl"/>
+                    <tabBarItem key="tabBarItem" title="最新情報" id="VT3-9c-1Dl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oii-df-W3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
