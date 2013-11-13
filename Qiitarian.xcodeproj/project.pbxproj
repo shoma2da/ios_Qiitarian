@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		340FFDF6183432340026702E /* sample_shomatsu.png in Resources */ = {isa = PBXBuildFile; fileRef = 340FFDF5183432340026702E /* sample_shomatsu.png */; };
 		34C053301833AED5005A4E33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C0532F1833AED5005A4E33 /* Foundation.framework */; };
 		34C053321833AED5005A4E33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C053311833AED5005A4E33 /* CoreGraphics.framework */; };
 		34C053341833AED5005A4E33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C053331833AED5005A4E33 /* UIKit.framework */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		340FFDF5183432340026702E /* sample_shomatsu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sample_shomatsu.png; path = Images/sample_shomatsu.png; sourceTree = "<group>"; };
 		34C0532C1833AED5005A4E33 /* Qiitarian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qiitarian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C0532F1833AED5005A4E33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		34C053311833AED5005A4E33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -76,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		340FFDF71834329F0026702E /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				340FFDF5183432340026702E /* sample_shomatsu.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		34C053231833AED5005A4E33 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +133,7 @@
 			children = (
 				34C053371833AED5005A4E33 /* Qiitarian-Info.plist */,
 				34C053381833AED5005A4E33 /* InfoPlist.strings */,
+				340FFDF71834329F0026702E /* Images */,
 				34C0533B1833AED5005A4E33 /* main.m */,
 				34C0533D1833AED5005A4E33 /* Qiitarian-Prefix.pch */,
 			);
@@ -227,6 +238,7 @@
 				34C053481833AED5005A4E33 /* Images.xcassets in Resources */,
 				34C0533A1833AED5005A4E33 /* InfoPlist.strings in Resources */,
 				34C053431833AED5005A4E33 /* Main.storyboard in Resources */,
+				340FFDF6183432340026702E /* sample_shomatsu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
