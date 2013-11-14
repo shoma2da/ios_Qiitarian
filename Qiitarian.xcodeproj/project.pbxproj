@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		340FFDF6183432340026702E /* sample_shomatsu.png in Resources */ = {isa = PBXBuildFile; fileRef = 340FFDF5183432340026702E /* sample_shomatsu.png */; };
 		340FFDFA183433F30026702E /* QiitarianLatestTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 340FFDF9183433F30026702E /* QiitarianLatestTableView.m */; };
+		3452D85718357EE600833424 /* QiitarianLatestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3452D85618357EE600833424 /* QiitarianLatestViewController.m */; };
 		34C053301833AED5005A4E33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C0532F1833AED5005A4E33 /* Foundation.framework */; };
 		34C053321833AED5005A4E33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C053311833AED5005A4E33 /* CoreGraphics.framework */; };
 		34C053341833AED5005A4E33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C053331833AED5005A4E33 /* UIKit.framework */; };
@@ -38,6 +39,8 @@
 		340FFDF5183432340026702E /* sample_shomatsu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sample_shomatsu.png; path = Images/sample_shomatsu.png; sourceTree = "<group>"; };
 		340FFDF8183433F20026702E /* QiitarianLatestTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QiitarianLatestTableView.h; path = latest/QiitarianLatestTableView.h; sourceTree = "<group>"; };
 		340FFDF9183433F30026702E /* QiitarianLatestTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QiitarianLatestTableView.m; path = latest/QiitarianLatestTableView.m; sourceTree = "<group>"; };
+		3452D85518357EE600833424 /* QiitarianLatestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QiitarianLatestViewController.h; path = latest/QiitarianLatestViewController.h; sourceTree = "<group>"; };
+		3452D85618357EE600833424 /* QiitarianLatestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QiitarianLatestViewController.m; path = latest/QiitarianLatestViewController.m; sourceTree = "<group>"; };
 		34C0532C1833AED5005A4E33 /* Qiitarian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qiitarian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C0532F1833AED5005A4E33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		34C053311833AED5005A4E33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -94,6 +97,8 @@
 			children = (
 				340FFDF8183433F20026702E /* QiitarianLatestTableView.h */,
 				340FFDF9183433F30026702E /* QiitarianLatestTableView.m */,
+				3452D85518357EE600833424 /* QiitarianLatestViewController.h */,
+				3452D85618357EE600833424 /* QiitarianLatestViewController.m */,
 			);
 			name = latest;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3452D85718357EE600833424 /* QiitarianLatestViewController.m in Sources */,
 				34C053401833AED5005A4E33 /* AppDelegate.m in Sources */,
 				340FFDFA183433F30026702E /* QiitarianLatestTableView.m in Sources */,
 				34C0533C1833AED5005A4E33 /* main.m in Sources */,

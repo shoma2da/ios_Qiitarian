@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
-        <!--View Controller - 最新情報-->
+        <!--Qiitarian Latest View Controller - 最新情報-->
         <scene sceneID="ONr-T6-7PS">
             <objects>
-                <viewController id="qk1-Fd-JQI" sceneMemberID="viewController">
+                <viewController id="qk1-Fd-JQI" customClass="QiitarianLatestViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BPA-fx-HFf"/>
                         <viewControllerLayoutGuide type="bottom" id="di3-rB-q6n"/>
