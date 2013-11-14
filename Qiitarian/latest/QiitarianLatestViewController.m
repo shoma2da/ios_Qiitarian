@@ -35,4 +35,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)clickCenterButton:(id)sender {
+    NSLog(@"hello");
+}
+
 @end
