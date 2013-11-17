@@ -18,6 +18,11 @@
         //文字列として表示
         NSString *resultString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"%@", resultString);
+        
+        //JSONオブジェクトとして表示
+        NSError *tempError;
+        NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&tempError];
+        NSLog(@"%@", jsonArray);
     }];
 }
 
