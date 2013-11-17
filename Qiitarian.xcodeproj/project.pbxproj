@@ -22,6 +22,7 @@
 		34C053511833AED5005A4E33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C053331833AED5005A4E33 /* UIKit.framework */; };
 		34C053591833AED5005A4E33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34C053571833AED5005A4E33 /* InfoPlist.strings */; };
 		34C0535B1833AED5005A4E33 /* QiitarianTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C0535A1833AED5005A4E33 /* QiitarianTests.m */; };
+		34C8408018374AD000C66BE9 /* QiitarianLatestFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C8407F18374AD000C66BE9 /* QiitarianLatestFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		34C053561833AED5005A4E33 /* QiitarianTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QiitarianTests-Info.plist"; sourceTree = "<group>"; };
 		34C053581833AED5005A4E33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		34C0535A1833AED5005A4E33 /* QiitarianTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QiitarianTests.m; sourceTree = "<group>"; };
+		34C8407E18374AD000C66BE9 /* QiitarianLatestFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QiitarianLatestFetcher.h; path = latest/QiitarianLatestFetcher.h; sourceTree = "<group>"; };
+		34C8407F18374AD000C66BE9 /* QiitarianLatestFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QiitarianLatestFetcher.m; path = latest/QiitarianLatestFetcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 			children = (
 				340FFDF8183433F20026702E /* QiitarianLatestTableView.h */,
 				340FFDF9183433F30026702E /* QiitarianLatestTableView.m */,
+				34C8407E18374AD000C66BE9 /* QiitarianLatestFetcher.h */,
+				34C8407F18374AD000C66BE9 /* QiitarianLatestFetcher.m */,
 			);
 			name = latest;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				34C053401833AED5005A4E33 /* AppDelegate.m in Sources */,
 				340FFDFA183433F30026702E /* QiitarianLatestTableView.m in Sources */,
 				34C0533C1833AED5005A4E33 /* main.m in Sources */,
+				34C8408018374AD000C66BE9 /* QiitarianLatestFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
