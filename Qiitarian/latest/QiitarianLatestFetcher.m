@@ -11,7 +11,7 @@
 @implementation QiitarianLatestFetcher
 
 - (void)fetch {
-    NSURL *url = [NSURL URLWithString:@"http://www.yahoo.co.jp"];
+    NSURL *url = [NSURL URLWithString:@"http://qiita.com/api/v1/items"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
