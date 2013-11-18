@@ -15,6 +15,11 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (data == nil) {
+            NSLog(@"Can't catch data");
+            return;
+        }
+        
         //文字列として表示
         NSString *resultString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"%@", resultString);
