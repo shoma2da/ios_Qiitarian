@@ -7,6 +7,7 @@
 //
 
 #import "QiitarianLatestViewController.h"
+#import "QiitarianLatestFetcher.h"
 
 @interface QiitarianLatestViewController ()
 
@@ -32,6 +33,10 @@
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    
+    QiitarianLatestFetcher *fetcher = [[QiitarianLatestFetcher alloc] init];
+    [fetcher fetch];
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,17 +7,12 @@
 //
 
 #import "AppDelegate.h"
-#import "QiitarianLatestFetcher.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    QiitarianLatestFetcher *fetcher = [[QiitarianLatestFetcher alloc] init];
-    [fetcher fetch];
-    
-    
     return YES;
 }
 							
