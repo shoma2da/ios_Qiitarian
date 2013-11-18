@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface QiitarianLatestFetcher : NSObject
+@interface QiitarianLatestFetcher : NSObject {
+    @private UITableView* tableView;
+}
 
 - (void) fetch;
+- (id) initWithTableView:(UITableView *)uiTableView;
 
 @end

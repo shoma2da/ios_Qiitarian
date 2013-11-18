@@ -26,4 +26,9 @@
     }];
 }
 
+- (id)initWithTableView:(UITableView *)uiTableView {
+    tableView = uiTableView;
+    return self;
+}
+
 @end
