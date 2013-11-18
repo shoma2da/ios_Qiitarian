@@ -34,7 +34,7 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
-    QiitarianLatestFetcher *fetcher = [[QiitarianLatestFetcher alloc] init];
+    QiitarianLatestFetcher *fetcher = [[QiitarianLatestFetcher alloc] initWithTableView:_tableView];
     [fetcher fetch];
     
 }
