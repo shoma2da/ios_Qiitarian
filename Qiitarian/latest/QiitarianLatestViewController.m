@@ -29,6 +29,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,5 +39,21 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//Table View用プロトコルの実装
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 3;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"id"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"id"];
+    }
+    
+    NSString *title = @"hogehoge";
+    cell.textLabel.text = title;
+    return cell;
+}
+//-------------------------
 
 @end

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QiitarianLatestViewController : UIViewController
+@interface QiitarianLatestViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @end
