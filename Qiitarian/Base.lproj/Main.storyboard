@@ -25,6 +25,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="最新情報" id="VT3-9c-1Dl"/>
+                    <connections>
+                        <outlet property="tableView" destination="QeD-Yc-5PA" id="bLN-1I-sJz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oii-df-W3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
