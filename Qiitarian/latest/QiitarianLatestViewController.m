@@ -7,7 +7,6 @@
 //
 
 #import "QiitarianLatestViewController.h"
-#import "QiitarianLatestFetcher.h"
 
 @interface QiitarianLatestViewController ()
 
@@ -53,7 +52,6 @@
         NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&tempError];
         NSLog(@"%@", jsonArray);
     }];
-    
 }
 
 - (void)didReceiveMemoryWarning
