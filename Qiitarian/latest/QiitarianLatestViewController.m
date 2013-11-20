@@ -11,6 +11,7 @@
 @interface QiitarianLatestViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *list;
 
 @end
 
@@ -24,11 +25,17 @@
     }
     return self;
 }
+- (IBAction)addCell:(id)sender {
+    [_list addObject:@"ddd"];
+    [_tableView reloadData];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    _list = @[@"aaa", @"bbb", @"ccc"].mutableCopy;
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -62,7 +69,7 @@
 
 //Table View用プロトコルの実装
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return [_list count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"id"];
@@ -70,7 +77,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"id"];
     }
     
-    NSString *title = @"hogehoge";
+    NSString *title = [_list objectAtIndex:indexPath.row];
     cell.textLabel.text = title;
     return cell;
 }
