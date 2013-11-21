@@ -58,6 +58,11 @@
         NSError *tempError;
         NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&tempError];
         NSLog(@"%@", jsonArray);
+        NSLog(@"%d", [jsonArray count]);
+        
+        [_list addObject:@"async"];
+        
+        [_tableView reloadData];
     }];
 }
 
