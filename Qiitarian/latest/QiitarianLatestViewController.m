@@ -7,7 +7,7 @@
 //
 
 #import "QiitarianLatestViewController.h"
-#import "QiitarianLatestItemsFetcher.h";
+#import "QiitarianLatestItemsFetcher.h"
 
 @interface QiitarianLatestViewController ()
 
