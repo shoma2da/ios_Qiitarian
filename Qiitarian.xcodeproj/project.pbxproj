@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		340FFDF6183432340026702E /* sample_shomatsu.png in Resources */ = {isa = PBXBuildFile; fileRef = 340FFDF5183432340026702E /* sample_shomatsu.png */; };
+		34657962183F353E00812C98 /* QiitarianLatestItemsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 34657961183F353E00812C98 /* QiitarianLatestItemsFetcher.m */; };
 		34C053301833AED5005A4E33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C0532F1833AED5005A4E33 /* Foundation.framework */; };
 		34C053321833AED5005A4E33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C053311833AED5005A4E33 /* CoreGraphics.framework */; };
 		34C053341833AED5005A4E33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C053331833AED5005A4E33 /* UIKit.framework */; };
@@ -36,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		340FFDF5183432340026702E /* sample_shomatsu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sample_shomatsu.png; path = Images/sample_shomatsu.png; sourceTree = "<group>"; };
+		34657960183F353E00812C98 /* QiitarianLatestItemsFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QiitarianLatestItemsFetcher.h; path = latest/model/QiitarianLatestItemsFetcher.h; sourceTree = "<group>"; };
+		34657961183F353E00812C98 /* QiitarianLatestItemsFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QiitarianLatestItemsFetcher.m; path = latest/model/QiitarianLatestItemsFetcher.m; sourceTree = "<group>"; };
 		34C0532C1833AED5005A4E33 /* Qiitarian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qiitarian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C0532F1833AED5005A4E33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		34C053311833AED5005A4E33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -94,8 +97,18 @@
 			children = (
 				34C84081183A417700C66BE9 /* QiitarianLatestViewController.h */,
 				34C84082183A417700C66BE9 /* QiitarianLatestViewController.m */,
+				34657963183F354800812C98 /* model */,
 			);
 			name = latest;
+			sourceTree = "<group>";
+		};
+		34657963183F354800812C98 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				34657960183F353E00812C98 /* QiitarianLatestItemsFetcher.h */,
+				34657961183F353E00812C98 /* QiitarianLatestItemsFetcher.m */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 		34C053231833AED5005A4E33 = {
@@ -272,6 +285,7 @@
 			files = (
 				34C053401833AED5005A4E33 /* AppDelegate.m in Sources */,
 				34C84083183A417700C66BE9 /* QiitarianLatestViewController.m in Sources */,
+				34657962183F353E00812C98 /* QiitarianLatestItemsFetcher.m in Sources */,
 				34C0533C1833AED5005A4E33 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
