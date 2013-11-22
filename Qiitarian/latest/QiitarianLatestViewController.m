@@ -60,7 +60,8 @@
         NSLog(@"%@", jsonArray);
         NSLog(@"%d", [jsonArray count]);
         
-        [_list addObject:@"async"];
+        NSDictionary *dict = jsonArray[0];
+        [_list addObject:dict[@"title"]];
         
         [_tableView reloadData];
     }];
