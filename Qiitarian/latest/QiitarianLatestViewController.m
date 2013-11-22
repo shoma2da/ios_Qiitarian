@@ -35,7 +35,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    _list = @[@"aaa", @"bbb", @"ccc"].mutableCopy;
+    _list = @[].mutableCopy;
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
