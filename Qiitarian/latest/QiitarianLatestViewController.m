@@ -60,8 +60,9 @@
         NSLog(@"%@", jsonArray);
         NSLog(@"%d", [jsonArray count]);
         
-        NSDictionary *dict = jsonArray[0];
-        [_list addObject:dict[@"title"]];
+        for (NSDictionary *dictionary in jsonArray) {
+            [_list addObject:dictionary[@"title"]];
+        }
         
         [_tableView reloadData];
     }];
