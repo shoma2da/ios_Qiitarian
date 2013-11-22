@@ -10,4 +10,6 @@
 
 @interface QiitarianLatestItemsFetcher : NSObject
 
+- (void)fetch:(void (^)(NSArray *))onFinishAccess;
+
 @end

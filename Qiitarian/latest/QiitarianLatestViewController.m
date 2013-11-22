@@ -7,6 +7,7 @@
 //
 
 #import "QiitarianLatestViewController.h"
+#import "QiitarianLatestItemsFetcher.h";
 
 @interface QiitarianLatestViewController ()
 
@@ -40,32 +41,14 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
-    //URLアクセス
-    NSURL *url = [NSURL URLWithString:@"http://qiita.com/api/v1/items"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        if (data == nil) {
-            NSLog(@"Can't catch data");
-            return;
-        }
-        
-        //文字列として表示
-        NSString *resultString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"%@", resultString);
-        
-        //JSONオブジェクトとして表示
-        NSError *tempError;
-        NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&tempError];
-        NSLog(@"%@", jsonArray);
-        NSLog(@"%d", [jsonArray count]);
-        
-        for (NSDictionary *dictionary in jsonArray) {
+    QiitarianLatestItemsFetcher *fetcher = [[QiitarianLatestItemsFetcher alloc] init];
+    [fetcher fetch:^(NSArray *array) {
+        for (NSDictionary *dictionary in array) {
             [_list addObject:dictionary[@"title"]];
         }
-        
         [_tableView reloadData];
     }];
+    
 }
 
 - (void)didReceiveMemoryWarning

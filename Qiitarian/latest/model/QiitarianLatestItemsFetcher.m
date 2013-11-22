@@ -10,4 +10,22 @@
 
 @implementation QiitarianLatestItemsFetcher
 
+- (void)fetch:(void (^)(NSArray *))onFinishAccess {
+    NSURL *url = [NSURL URLWithString:@"http://qiita.com/api/v1/items"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (data == nil) {
+            NSLog(@"Can't catch data");
+            return;
+        }
+        
+        //JSONを変換する
+        NSError *tempError;
+        NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&tempError];
+        
+        onFinishAccess(jsonArray);
+    }];
+}
+
 @end
