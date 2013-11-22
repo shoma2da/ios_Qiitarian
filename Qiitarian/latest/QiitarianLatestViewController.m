@@ -26,10 +26,6 @@
     }
     return self;
 }
-- (IBAction)addCell:(id)sender {
-    [_list addObject:@"ddd"];
-    [_tableView reloadData];
-}
 
 - (void)viewDidLoad
 {
