@@ -8,6 +8,7 @@
 
 #import "QiitarianLatestViewController.h"
 #import "QiitarianLatestItemsFetcher.h"
+#import "QiitarianLatestItems.h"
 
 @interface QiitarianLatestViewController ()
 
@@ -39,12 +40,11 @@
     
     QiitarianLatestItemsFetcher *fetcher = [[QiitarianLatestItemsFetcher alloc] init];
     [fetcher fetch:^(NSArray *array) {
-        for (NSDictionary *dictionary in array) {
-            [_list addObject:dictionary[@"title"]];
+        for (QiitarianLatestItems *items in array) {
+            [_list addObject:items.title];
         }
         [_tableView reloadData];
     }];
-    
 }
 
 - (void)didReceiveMemoryWarning

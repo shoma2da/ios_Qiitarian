@@ -7,6 +7,7 @@
 //
 
 #import "QiitarianLatestItemsFetcher.h"
+#import "QiitarianLatestItems.h"
 
 @implementation QiitarianLatestItemsFetcher
 
@@ -24,7 +25,14 @@
         NSError *tempError;
         NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&tempError];
         
-        onFinishAccess(jsonArray);
+        //データオブジェクトの配列に変換する
+        NSMutableArray *dataList = @[].mutableCopy;
+        for (NSDictionary *dict in jsonArray) {
+            QiitarianLatestItems *items = [[QiitarianLatestItems alloc] initWithKeyValueMap:dict];
+            [dataList addObject:items];
+        }
+        
+        onFinishAccess(dataList.copy);
     }];
 }
 

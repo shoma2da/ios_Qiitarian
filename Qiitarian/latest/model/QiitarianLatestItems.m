@@ -9,7 +9,7 @@
 #import "QiitarianLatestItems.h"
 
 @implementation QiitarianLatestItems {
-    NSDictionary *_keyValueMap;
+    __strong NSDictionary *_keyValueMap;
 }
 
 - (QiitarianLatestItems *)initWithKeyValueMap:(NSDictionary *)keyValueMap {
