@@ -8,17 +8,11 @@
 
 #import "QiitarianLatestItem.h"
 
-@implementation QiitarianLatestItem {
-    __strong NSDictionary *_keyValueMap;
-}
+@implementation QiitarianLatestItem
 
 - (QiitarianLatestItem *)initWithKeyValueMap:(NSDictionary *)keyValueMap {
-    _keyValueMap = keyValueMap;
+    _title = keyValueMap[@"title"];
     return self;
-}
-
-- (NSString *)title {
-    return _keyValueMap[@"title"];
 }
 
 @end
