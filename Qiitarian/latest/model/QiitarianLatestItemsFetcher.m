@@ -7,7 +7,7 @@
 //
 
 #import "QiitarianLatestItemsFetcher.h"
-#import "QiitarianLatestItems.h"
+#import "QiitarianLatestItem.h"
 
 @implementation QiitarianLatestItemsFetcher
 
@@ -28,7 +28,7 @@
         //データオブジェクトの配列に変換する
         NSMutableArray *dataList = @[].mutableCopy;
         for (NSDictionary *dict in jsonArray) {
-            QiitarianLatestItems *items = [[QiitarianLatestItems alloc] initWithKeyValueMap:dict];
+            QiitarianLatestItem *items = [[QiitarianLatestItem alloc] initWithKeyValueMap:dict];
             [dataList addObject:items];
         }
         

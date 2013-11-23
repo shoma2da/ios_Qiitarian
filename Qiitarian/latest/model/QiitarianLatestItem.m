@@ -6,13 +6,13 @@
 //  Copyright (c) 2013年 Shoichi Matsuda. All rights reserved.
 //
 
-#import "QiitarianLatestItems.h"
+#import "QiitarianLatestItem.h"
 
-@implementation QiitarianLatestItems {
+@implementation QiitarianLatestItem {
     __strong NSDictionary *_keyValueMap;
 }
 
-- (QiitarianLatestItems *)initWithKeyValueMap:(NSDictionary *)keyValueMap {
+- (QiitarianLatestItem *)initWithKeyValueMap:(NSDictionary *)keyValueMap {
     _keyValueMap = keyValueMap;
     return self;
 }

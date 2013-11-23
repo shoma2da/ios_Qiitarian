@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface QiitarianLatestItems : NSObject
+@interface QiitarianLatestItem : NSObject
 
-- (QiitarianLatestItems *) initWithKeyValueMap:(NSDictionary *)keyValueMap;
+- (QiitarianLatestItem *) initWithKeyValueMap:(NSDictionary *)keyValueMap;
 - (NSString *)title;
 
 @end
