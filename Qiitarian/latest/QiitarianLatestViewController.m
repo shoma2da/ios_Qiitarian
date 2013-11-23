@@ -40,8 +40,8 @@
     
     QiitarianLatestItemsFetcher *fetcher = [[QiitarianLatestItemsFetcher alloc] init];
     [fetcher fetch:^(NSArray *array) {
-        for (QiitarianLatestItem *items in array) {
-            [_list addObject:items.title];
+        for (QiitarianLatestItem *item in array) {
+            [_list addObject:item.title];
         }
         [_tableView reloadData];
     }];

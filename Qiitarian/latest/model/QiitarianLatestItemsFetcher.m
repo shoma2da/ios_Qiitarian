@@ -28,8 +28,8 @@
         //データオブジェクトの配列に変換する
         NSMutableArray *dataList = @[].mutableCopy;
         for (NSDictionary *dict in jsonArray) {
-            QiitarianLatestItem *items = [[QiitarianLatestItem alloc] initWithKeyValueMap:dict];
-            [dataList addObject:items];
+            QiitarianLatestItem *item = [[QiitarianLatestItem alloc] initWithKeyValueMap:dict];
+            [dataList addObject:item];
         }
         
         onFinishAccess(dataList.copy);
