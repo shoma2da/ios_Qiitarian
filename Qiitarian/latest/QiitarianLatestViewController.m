@@ -73,6 +73,7 @@
 }
 
 //Table View用プロトコルの実装
+//-------------------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [_list count];
 }
