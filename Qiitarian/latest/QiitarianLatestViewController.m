@@ -51,7 +51,6 @@
 }
 
 - (void)onRefresh:(id)sender {
-    NSLog(@"onRefresh");
     [self.refreshControl beginRefreshing];
     QiitarianLatestItemsFetcher *fetcher = [[QiitarianLatestItemsFetcher alloc] init];
     [fetcher fetch:^(NSArray *array) {

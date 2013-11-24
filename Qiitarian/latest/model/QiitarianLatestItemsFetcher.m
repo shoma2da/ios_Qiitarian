@@ -15,11 +15,15 @@
     NSURL *url = [NSURL URLWithString:@"http://qiita.com/api/v1/items"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
+    NSLog(@"request to %@", [url absoluteString]);
+    
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         if (data == nil) {
             NSLog(@"Can't catch data");
             return;
         }
+        
+        NSLog(@"Catch data");
         
         //JSONを変換する
         NSError *tempError;
