@@ -12,6 +12,10 @@
 @implementation QiitarianLatestItemsFetcher
 
 - (void)fetch:(void (^)(NSArray *))onFinishAccess {
+    [self fetch:onFinishAccess index:1];
+}
+
+- (void)fetch:(void (^)(NSArray *))onFinishAccess index:(NSInteger)index {
     NSURL *url = [NSURL URLWithString:@"http://qiita.com/api/v1/items"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
