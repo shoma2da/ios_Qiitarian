@@ -87,6 +87,9 @@
     cell.textLabel.text = title;
     return cell;
 }
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSLog(@"finish scroll");
+}
 //-------------------------
 
 @end
