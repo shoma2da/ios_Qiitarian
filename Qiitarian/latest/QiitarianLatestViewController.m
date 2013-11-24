@@ -32,6 +32,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl = refreshControl;
+    [self.refreshControl addTarget:self action:@selector(onRefresh:) forControlEvents:UIControlEventValueChanged];
+    
     _list = @[].mutableCopy;
     
     self.tableView.delegate = self;
@@ -44,6 +48,12 @@
         }
         [self.tableView reloadData];
     }];
+}
+
+- (void)onRefresh:(id)sender {
+    NSLog(@"onRefresh");
+    [self.refreshControl beginRefreshing];
+    [self.refreshControl endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning
