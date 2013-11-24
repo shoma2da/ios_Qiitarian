@@ -16,7 +16,8 @@
 }
 
 - (void)fetch:(void (^)(NSArray *))onFinishAccess index:(NSInteger)index {
-    NSURL *url = [NSURL URLWithString:@"http://qiita.com/api/v1/items"];
+    NSString *urlString = [NSString stringWithFormat:@"http://qiita.com/api/v1/items?page=%d", index];
+    NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     NSLog(@"request to %@", [url absoluteString]);

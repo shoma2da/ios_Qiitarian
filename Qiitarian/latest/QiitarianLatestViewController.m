@@ -93,6 +93,16 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     if(self.tableView.contentOffset.y >= (self.tableView.contentSize.height - self.tableView.bounds.size.height)) {
         NSLog(@"bottom!!");
+        
+        QiitarianLatestItemsFetcher *fetcer = [[QiitarianLatestItemsFetcher alloc] init];
+        [fetcer fetch:^(NSArray *array) {
+            for (QiitarianLatestItem *item in array) {
+                if ([_list containsObject:item.title] == false) {
+                    [_list addObject:item.title];
+                }
+            }
+            [self.tableView reloadData];
+        } index:++_currentPage];
     }
 }
 //-------------------------
