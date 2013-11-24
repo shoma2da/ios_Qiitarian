@@ -53,7 +53,18 @@
 - (void)onRefresh:(id)sender {
     NSLog(@"onRefresh");
     [self.refreshControl beginRefreshing];
-    [self.refreshControl endRefreshing];
+    QiitarianLatestItemsFetcher *fetcher = [[QiitarianLatestItemsFetcher alloc] init];
+    [fetcher fetch:^(NSArray *array) {
+        NSArray *reversed = [[array reverseObjectEnumerator] allObjects];
+        for (QiitarianLatestItem *item in reversed) {
+            if ([_list containsObject:item.title] == false) {
+                [_list insertObject:item.title atIndex:0];
+            }
+        }
+        [self.tableView reloadData];
+        [self.refreshControl endRefreshing];
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning
