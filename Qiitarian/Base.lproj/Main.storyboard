@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-632" y="360"/>
         </scene>
-        <!--Qiitarian Latest View Controller - Item-->
+        <!--Qiitarian Latest View Controller - 最新情報-->
         <scene sceneID="0Pj-bW-oGx">
             <objects>
                 <tableViewController id="IY7-sK-N3N" customClass="QiitarianLatestViewController" sceneMemberID="viewController">
@@ -48,7 +48,7 @@
                             <outlet property="delegate" destination="IY7-sK-N3N" id="NEe-E9-JRd"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="R6s-FT-pSS"/>
+                    <tabBarItem key="tabBarItem" title="最新情報" id="R6s-FT-pSS"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfs-qW-Dba" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
