@@ -11,5 +11,6 @@
 @interface QiitarianLatestItemsFetcher : NSObject
 
 - (void)fetch:(void (^)(NSArray *))onFinishAccess;
+- (void)fetch:(void (^)(NSArray *))onFinishAccess index:(NSInteger)index;
 
 @end

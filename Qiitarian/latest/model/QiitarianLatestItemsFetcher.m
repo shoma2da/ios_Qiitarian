@@ -12,14 +12,23 @@
 @implementation QiitarianLatestItemsFetcher
 
 - (void)fetch:(void (^)(NSArray *))onFinishAccess {
-    NSURL *url = [NSURL URLWithString:@"http://qiita.com/api/v1/items"];
+    [self fetch:onFinishAccess index:1];
+}
+
+- (void)fetch:(void (^)(NSArray *))onFinishAccess index:(NSInteger)index {
+    NSString *urlString = [NSString stringWithFormat:@"http://qiita.com/api/v1/items?page=%d", index];
+    NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    NSLog(@"request to %@", [url absoluteString]);
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         if (data == nil) {
             NSLog(@"Can't catch data");
             return;
         }
+        
+        NSLog(@"Catch data");
         
         //JSONを変換する
         NSError *tempError;
