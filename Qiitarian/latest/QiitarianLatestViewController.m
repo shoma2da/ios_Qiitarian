@@ -12,6 +12,7 @@
 
 @interface QiitarianLatestViewController () {
     @private int _currentPage;
+    @private int _isUpdating;
 }
 
 @property (nonatomic, strong) NSMutableArray *list;
@@ -40,6 +41,7 @@
     
     _list = @[].mutableCopy;
     _currentPage = 1;
+    _isUpdating = NO;
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -94,11 +96,15 @@
     if(self.tableView.contentOffset.y >= (self.tableView.contentSize.height - self.tableView.bounds.size.height)) {
         NSLog(@"bottom!!");
         
+        if (_isUpdating) {
+            return;
+        }
         if (10 <= _currentPage) {
             return;
         }
         
         //最下部への記事追加
+        _isUpdating = YES;
         QiitarianLatestItemsFetcher *fetcer = [[QiitarianLatestItemsFetcher alloc] init];
         [fetcer fetch:^(NSArray *array) {
             for (QiitarianLatestItem *item in array) {
@@ -107,6 +113,7 @@
                 }
             }
             [self.tableView reloadData];
+            _isUpdating = NO;
         } index:++_currentPage];
     }
 }
