@@ -94,6 +94,10 @@
     if(self.tableView.contentOffset.y >= (self.tableView.contentSize.height - self.tableView.bounds.size.height)) {
         NSLog(@"bottom!!");
         
+        if (10 <= _currentPage) {
+            return;
+        }
+        
         QiitarianLatestItemsFetcher *fetcer = [[QiitarianLatestItemsFetcher alloc] init];
         [fetcer fetch:^(NSArray *array) {
             for (QiitarianLatestItem *item in array) {
