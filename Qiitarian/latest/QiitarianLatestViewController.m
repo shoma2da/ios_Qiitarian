@@ -88,7 +88,9 @@
     return cell;
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSLog(@"finish scroll");
+    if(self.tableView.contentOffset.y >= (self.tableView.contentSize.height - self.tableView.bounds.size.height)) {
+        NSLog(@"bottom!!");
+    }
 }
 //-------------------------
 
