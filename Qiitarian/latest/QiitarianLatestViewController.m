@@ -98,6 +98,7 @@
             return;
         }
         
+        //最下部への記事追加
         QiitarianLatestItemsFetcher *fetcer = [[QiitarianLatestItemsFetcher alloc] init];
         [fetcer fetch:^(NSArray *array) {
             for (QiitarianLatestItem *item in array) {
