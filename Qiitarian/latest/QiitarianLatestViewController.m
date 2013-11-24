@@ -10,7 +10,9 @@
 #import "QiitarianLatestItemsFetcher.h"
 #import "QiitarianLatestItem.h"
 
-@interface QiitarianLatestViewController ()
+@interface QiitarianLatestViewController () {
+    @private int _currentPage;
+}
 
 @property (nonatomic, strong) NSMutableArray *list;
 
@@ -37,6 +39,7 @@
     [self.refreshControl addTarget:self action:@selector(onRefresh:) forControlEvents:UIControlEventValueChanged];
     
     _list = @[].mutableCopy;
+    _currentPage = 1;
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
