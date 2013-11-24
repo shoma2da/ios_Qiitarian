@@ -12,7 +12,6 @@
 
 @interface QiitarianLatestViewController ()
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *list;
 
 @end
@@ -35,15 +34,15 @@
     
     _list = @[].mutableCopy;
     
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
     QiitarianLatestItemsFetcher *fetcher = [[QiitarianLatestItemsFetcher alloc] init];
     [fetcher fetch:^(NSArray *array) {
         for (QiitarianLatestItem *item in array) {
             [_list addObject:item.title];
         }
-        [_tableView reloadData];
+        [self.tableView reloadData];
     }];
 }
 
@@ -58,7 +57,7 @@
     return [_list count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"id"];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"id"];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"id"];
     }
