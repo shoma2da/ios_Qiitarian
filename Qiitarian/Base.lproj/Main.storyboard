@@ -15,15 +15,15 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="ycn-Go-d8Q" kind="relationship" relationship="viewControllers" id="Zt2-sf-GdN"/>
-                        <segue destination="4Ew-FM-Qwl" kind="relationship" relationship="viewControllers" id="15G-hA-Fi5"/>
-                        <segue destination="7SI-8K-rCi" kind="relationship" relationship="viewControllers" id="5P8-rq-JGI"/>
-                        <segue destination="IY7-sK-N3N" kind="relationship" relationship="viewControllers" id="zjJ-0x-aLS"/>
+                        <segue destination="IY7-sK-N3N" kind="relationship" relationship="viewControllers" id="ISW-Vc-Ifc"/>
+                        <segue destination="ycn-Go-d8Q" kind="relationship" relationship="viewControllers" id="Pu0-6w-3jf"/>
+                        <segue destination="4Ew-FM-Qwl" kind="relationship" relationship="viewControllers" id="xdx-tv-0Ff"/>
+                        <segue destination="7SI-8K-rCi" kind="relationship" relationship="viewControllers" id="y8C-t5-PFD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PnR-AB-cYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-632" y="360"/>
+            <point key="canvasLocation" x="-1060" y="134"/>
         </scene>
         <!--Qiitarian Latest View Controller - 最新情報-->
         <scene sceneID="0Pj-bW-oGx">
@@ -52,7 +52,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfs-qW-Dba" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100" y="34"/>
+            <point key="canvasLocation" x="-542" y="-190"/>
         </scene>
         <!--View Controller - Item-->
         <scene sceneID="KY5-O4-Vmb">
@@ -71,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aNA-Ge-IY2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-654" y="1328"/>
+            <point key="canvasLocation" x="-542" y="474"/>
         </scene>
         <!--View Controller - Item-->
         <scene sceneID="5fl-Yf-fiS">
@@ -90,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyG-7m-JyS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-104" y="1345"/>
+            <point key="canvasLocation" x="-186" y="474"/>
         </scene>
         <!--View Controller - Item 2-->
         <scene sceneID="EPF-fE-shG">
@@ -109,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rM-yx-bSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-98" y="686"/>
+            <point key="canvasLocation" x="-186" y="-190"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
