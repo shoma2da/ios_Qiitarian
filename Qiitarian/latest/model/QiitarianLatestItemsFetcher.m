@@ -17,7 +17,7 @@
 }
 
 - (void)fetch:(void (^)(QiitarianLatestItemList *))onFinishAccess index:(NSInteger)index {
-    NSString *urlString = [NSString stringWithFormat:@"http://qiita.com/api/v1/items?page=%d", index];
+    NSString *urlString = [NSString stringWithFormat:@"http://qiita.com/api/v1/items?page=%ld", (long)index];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
