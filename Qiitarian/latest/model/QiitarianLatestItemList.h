@@ -13,6 +13,8 @@
 @property(nonatomic, readonly) NSArray *itemList;
 
 - (QiitarianLatestItemList *) initWithQiitarianList:(NSArray *)itemList;
-- (QiitarianLatestItemList *) merge:(QiitarianLatestItemList *)afterList;
+
+- (QiitarianLatestItemList *) mergeToLast:(QiitarianLatestItemList *)itemList;
+- (QiitarianLatestItemList *) mergeToHead:(QiitarianLatestItemList *)itemList;
 
 @end

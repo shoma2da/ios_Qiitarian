@@ -15,7 +15,10 @@
     return self;
 }
 
-- (QiitarianLatestItemList *)merge:(QiitarianLatestItemList *)afterList {
+- (QiitarianLatestItemList *) mergeToLast:(QiitarianLatestItemList *)itemList {
+    return NULL;
+}
+- (QiitarianLatestItemList *) mergeToHead:(QiitarianLatestItemList *)itemList {
     return NULL;
 }
 
