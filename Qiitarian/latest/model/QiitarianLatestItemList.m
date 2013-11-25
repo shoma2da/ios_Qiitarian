@@ -12,9 +12,11 @@
 
 - (QiitarianLatestItemList *)initWithQiitarianList:(NSArray *)itemList {
     _itemList = itemList;
+    return self;
 }
 
 - (QiitarianLatestItemList *)merge:(QiitarianLatestItemList *)afterList {
+    return NULL;
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "QiitarianLatestItemsFetcher.h"
 #import "QiitarianLatestItem.h"
+#import "QiitarianLatestItemList.h"
 
 @implementation QiitarianLatestItemsFetcher
 
@@ -40,6 +41,9 @@
             QiitarianLatestItem *item = [[QiitarianLatestItem alloc] initWithKeyValueMap:dict];
             [dataList addObject:item];
         }
+        
+        QiitarianLatestItemList *list = [[QiitarianLatestItemList alloc] initWithQiitarianList:dataList.copy];
+        NSLog(@"%@", [list.itemList description]);
         
         onFinishAccess(dataList.copy);
     }];
