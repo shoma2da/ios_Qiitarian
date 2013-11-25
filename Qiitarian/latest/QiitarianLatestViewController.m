@@ -15,9 +15,9 @@
 @private
     int _currentPage;
     BOOL _isUpdating;
+    NSMutableArray *_list;
 }
 
-@property (nonatomic, strong) NSMutableArray *list;
 
 @end
 
