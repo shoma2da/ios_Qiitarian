@@ -11,8 +11,9 @@
 #import "QiitarianLatestItem.h"
 
 @interface QiitarianLatestViewController () {
-    @private int _currentPage;
-    @private int _isUpdating;
+@private
+    int _currentPage;
+    BOOL _isUpdating;
 }
 
 @property (nonatomic, strong) NSMutableArray *list;
