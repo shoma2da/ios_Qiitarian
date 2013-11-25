@@ -11,6 +11,7 @@
 @implementation QiitarianLatestItem
 
 - (QiitarianLatestItem *)initWithKeyValueMap:(NSDictionary *)keyValueMap {
+    _id = (int)keyValueMap[@"id"];
     _title = keyValueMap[@"title"];
     return self;
 }

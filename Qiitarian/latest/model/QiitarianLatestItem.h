@@ -10,6 +10,7 @@
 
 @interface QiitarianLatestItem : NSObject
 
+@property (nonatomic, readonly) int id;
 @property (nonatomic, readonly) NSString *title;
 
 - (QiitarianLatestItem *) initWithKeyValueMap:(NSDictionary *)keyValueMap;
