@@ -9,6 +9,7 @@
 #import "QiitarianLatestViewController.h"
 #import "QiitarianLatestItemsFetcher.h"
 #import "QiitarianLatestItem.h"
+#import "QiitarianLatestItemList.h"
 
 @interface QiitarianLatestViewController () {
 @private
@@ -48,8 +49,8 @@
     self.tableView.dataSource = self;
     
     QiitarianLatestItemsFetcher *fetcher = [[QiitarianLatestItemsFetcher alloc] init];
-    [fetcher fetch:^(NSArray *array) {
-        for (QiitarianLatestItem *item in array) {
+    [fetcher fetch:^(QiitarianLatestItemList *array) {
+        for (QiitarianLatestItem *item in array.itemList) {
             [_list addObject:item.title];
         }
         [self.tableView reloadData];
@@ -59,8 +60,8 @@
 - (void)onRefresh:(id)sender {
     [self.refreshControl beginRefreshing];
     QiitarianLatestItemsFetcher *fetcher = [[QiitarianLatestItemsFetcher alloc] init];
-    [fetcher fetch:^(NSArray *array) {
-        NSArray *reversed = [[array reverseObjectEnumerator] allObjects];
+    [fetcher fetch:^(QiitarianLatestItemList *array) {
+        NSArray *reversed = [[array.itemList reverseObjectEnumerator] allObjects];
         for (QiitarianLatestItem *item in reversed) {
             if ([_list containsObject:item.title] == false) {
                 [_list insertObject:item.title atIndex:0];
@@ -107,8 +108,8 @@
         //最下部への記事追加
         _isUpdating = YES;
         QiitarianLatestItemsFetcher *fetcer = [[QiitarianLatestItemsFetcher alloc] init];
-        [fetcer fetch:^(NSArray *array) {
-            for (QiitarianLatestItem *item in array) {
+        [fetcer fetch:^(QiitarianLatestItemList *array) {
+            for (QiitarianLatestItem *item in array.itemList) {
                 if ([_list containsObject:item.title] == false) {
                     [_list addObject:item.title];
                 }
