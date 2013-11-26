@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "QiitarianLatestItem.h"
 
 @interface QiitarianLatestItemTest : XCTestCase
 
@@ -26,9 +27,9 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+- (void)testIDを取得できる {
+    QiitarianLatestItem *item = [[QiitarianLatestItem alloc] initWithKeyValueMap:@{@"id" : @315}];
+    XCTAssertEqual(315, item.id);
 }
 
 @end

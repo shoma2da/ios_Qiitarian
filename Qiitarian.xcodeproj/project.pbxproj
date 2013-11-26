@@ -24,7 +24,6 @@
 		34C053501833AED5005A4E33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C0532F1833AED5005A4E33 /* Foundation.framework */; };
 		34C053511833AED5005A4E33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C053331833AED5005A4E33 /* UIKit.framework */; };
 		34C053591833AED5005A4E33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34C053571833AED5005A4E33 /* InfoPlist.strings */; };
-		34C0535B1833AED5005A4E33 /* QiitarianTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C0535A1833AED5005A4E33 /* QiitarianTests.m */; };
 		34C84083183A417700C66BE9 /* QiitarianLatestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C84082183A417700C66BE9 /* QiitarianLatestViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -63,7 +62,6 @@
 		34C0534E1833AED5005A4E33 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		34C053561833AED5005A4E33 /* QiitarianTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QiitarianTests-Info.plist"; sourceTree = "<group>"; };
 		34C053581833AED5005A4E33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		34C0535A1833AED5005A4E33 /* QiitarianTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QiitarianTests.m; sourceTree = "<group>"; };
 		34C84081183A417700C66BE9 /* QiitarianLatestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QiitarianLatestViewController.h; path = latest/QiitarianLatestViewController.h; sourceTree = "<group>"; };
 		34C84082183A417700C66BE9 /* QiitarianLatestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QiitarianLatestViewController.m; path = latest/QiitarianLatestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,7 +195,6 @@
 		34C053541833AED5005A4E33 /* QiitarianTests */ = {
 			isa = PBXGroup;
 			children = (
-				34C0535A1833AED5005A4E33 /* QiitarianTests.m */,
 				34C053551833AED5005A4E33 /* Supporting Files */,
 				347743F91844A054007014DC /* latest */,
 			);
@@ -326,7 +323,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				347743F81844A04E007014DC /* QiitarianLatestItemTest.m in Sources */,
-				34C0535B1833AED5005A4E33 /* QiitarianTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
