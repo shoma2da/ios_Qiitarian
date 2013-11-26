@@ -15,7 +15,7 @@
 @private
     int _currentPage;
     BOOL _isUpdating;
-    NSMutableArray *_list;
+    QiitarianLatestItemList *_qiitarianLatestItemList;
 }
 
 
@@ -41,7 +41,7 @@
     self.refreshControl = refreshControl;
     [self.refreshControl addTarget:self action:@selector(onRefresh:) forControlEvents:UIControlEventValueChanged];
     
-    _list = @[].mutableCopy;
+    _qiitarianLatestItemList = [[QiitarianLatestItemList alloc] initWithQiitarianList:@[]];
     _currentPage = 1;
     _isUpdating = NO;
     
@@ -50,9 +50,7 @@
     
     QiitarianLatestItemsFetcher *fetcher = [[QiitarianLatestItemsFetcher alloc] init];
     [fetcher fetch:^(QiitarianLatestItemList *array) {
-        for (QiitarianLatestItem *item in array.itemList) {
-            [_list addObject:item.title];
-        }
+        _qiitarianLatestItemList = array;
         [self.tableView reloadData];
     }];
 }
@@ -61,12 +59,7 @@
     [self.refreshControl beginRefreshing];
     QiitarianLatestItemsFetcher *fetcher = [[QiitarianLatestItemsFetcher alloc] init];
     [fetcher fetch:^(QiitarianLatestItemList *array) {
-        NSArray *reversed = [[array.itemList reverseObjectEnumerator] allObjects];
-        for (QiitarianLatestItem *item in reversed) {
-            if ([_list containsObject:item.title] == false) {
-                [_list insertObject:item.title atIndex:0];
-            }
-        }
+        _qiitarianLatestItemList = [_qiitarianLatestItemList mergeToHead:array];
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
     }];
@@ -82,7 +75,7 @@
 //Table View用プロトコルの実装
 //-------------------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_list count];
+    return [_qiitarianLatestItemList.itemList count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"id"];
@@ -90,7 +83,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"id"];
     }
     
-    NSString *title = [_list objectAtIndex:indexPath.row];
+    NSString *title = ((QiitarianLatestItem *)[_qiitarianLatestItemList.itemList objectAtIndex:indexPath.row]).title;
     cell.textLabel.text = title;
     return cell;
 }
@@ -109,11 +102,7 @@
         _isUpdating = YES;
         QiitarianLatestItemsFetcher *fetcer = [[QiitarianLatestItemsFetcher alloc] init];
         [fetcer fetch:^(QiitarianLatestItemList *array) {
-            for (QiitarianLatestItem *item in array.itemList) {
-                if ([_list containsObject:item.title] == false) {
-                    [_list addObject:item.title];
-                }
-            }
+            _qiitarianLatestItemList = [_qiitarianLatestItemList mergeToLast:array];
             [self.tableView reloadData];
             _isUpdating = NO;
         } index:++_currentPage];
