@@ -7,6 +7,7 @@
 //
 
 #import "QiitarianLatestItemList.h"
+#import "QiitarianLatestItem.h"
 
 @implementation QiitarianLatestItemList
 
@@ -16,10 +17,26 @@
 }
 
 - (QiitarianLatestItemList *) mergeToLast:(QiitarianLatestItemList *)itemList {
-    return NULL;
+    NSMutableArray *srcArray = _itemList.mutableCopy;
+    for (QiitarianLatestItem *item in itemList.itemList) {
+        if ([srcArray containsObject:item] == NO) {
+            [srcArray addObject:item];
+        }
+    }
+    return [[QiitarianLatestItemList alloc] initWithQiitarianList:srcArray.copy];
 }
+
 - (QiitarianLatestItemList *) mergeToHead:(QiitarianLatestItemList *)itemList {
-    return NULL;
+    NSMutableArray *srcArray = _itemList.mutableCopy;
+    
+    NSArray *reverseArray = [[itemList.itemList reverseObjectEnumerator] allObjects];
+    for (QiitarianLatestItem *item in reverseArray) {
+        if ([srcArray containsObject:item] == NO) {
+            [srcArray insertObject:item atIndex:0];
+        }
+    }
+    
+    return [[QiitarianLatestItemList alloc] initWithQiitarianList:srcArray.copy];
 }
 
 @end
