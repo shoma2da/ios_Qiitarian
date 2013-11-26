@@ -32,4 +32,9 @@
     XCTAssertEqual(315, item.id);
 }
 
+- (void)testTitleを取得できる {
+    QiitarianLatestItem *item = [[QiitarianLatestItem alloc] initWithKeyValueMap:@{@"title" : @"SampleTitle"}];
+    XCTAssertEqualObjects(@"SampleTitle", item.title);
+}
+
 @end
