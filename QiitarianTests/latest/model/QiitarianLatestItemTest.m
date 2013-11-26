@@ -27,14 +27,23 @@
     [super tearDown];
 }
 
-- (void)testIDを取得できる {
-    QiitarianLatestItem *item = [[QiitarianLatestItem alloc] initWithKeyValueMap:@{@"id" : @315}];
-    XCTAssertEqual(315, item.id);
+- (void)testCanGetId {
+    NSNumber *number = [[NSNumber alloc] initWithInt:315];
+    QiitarianLatestItem *item = [[QiitarianLatestItem alloc] initWithKeyValueMap:@{@"id" : number}];
+    XCTAssertEqual([number intValue], item.id);
 }
 
-- (void)testTitleを取得できる {
+- (void)testCanGetTitle {
     QiitarianLatestItem *item = [[QiitarianLatestItem alloc] initWithKeyValueMap:@{@"title" : @"SampleTitle"}];
     XCTAssertEqualObjects(@"SampleTitle", item.title);
+}
+
+- (void)testCanJudgeEqual {
+    QiitarianLatestItem *item = [[QiitarianLatestItem alloc] initWithKeyValueMap:@{@"id" : @315}];
+    
+    XCTAssertFalse([item isEqual:NULL]);
+    XCTAssertFalse([item isEqual:@""]);
+    XCTAssertFalse([item isEqual:[[QiitarianLatestItem alloc] initWithKeyValueMap:@{@"id" : @1}]]);
 }
 
 @end

@@ -11,9 +11,21 @@
 @implementation QiitarianLatestItem
 
 - (QiitarianLatestItem *)initWithKeyValueMap:(NSDictionary *)keyValueMap {
-    _id = (int)keyValueMap[@"id"];
+    _id = [(NSNumber *)keyValueMap[@"id"] intValue];
     _title = keyValueMap[@"title"];
     return self;
+}
+
+- (BOOL)isEqual:(id)object {
+    if (object == NULL) {
+        return NO;
+    }
+    if ([object isKindOfClass:[QiitarianLatestItem class]] == NO) {
+        return NO;
+    }
+    
+    QiitarianLatestItem *item = (QiitarianLatestItem *)object;
+    return item.id == self.id;
 }
 
 @end
