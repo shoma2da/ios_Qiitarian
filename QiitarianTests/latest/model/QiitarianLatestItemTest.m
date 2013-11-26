@@ -47,4 +47,16 @@
     XCTAssertTrue([item isEqual:[[QiitarianLatestItem alloc] initWithKeyValueMap:@{@"id" : @315}]]);
 }
 
+- (void)testCanJudgeInArray {
+    NSArray *array = @[[[QiitarianLatestItem alloc] initWithKeyValueMap:@{@"id" : @315}]];
+    
+    //入っている
+    QiitarianLatestItem *item = [[QiitarianLatestItem alloc] initWithKeyValueMap:@{@"id" : @315}];
+    XCTAssertTrue([array containsObject:item]);
+    
+    //入っていない
+    QiitarianLatestItem *errorItem = [[QiitarianLatestItem alloc] initWithKeyValueMap:@{@"id" : @10}];
+    XCTAssertFalse([array containsObject:errorItem]);
+}
+
 @end
