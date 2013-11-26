@@ -44,6 +44,7 @@
     XCTAssertFalse([item isEqual:NULL]);
     XCTAssertFalse([item isEqual:@""]);
     XCTAssertFalse([item isEqual:[[QiitarianLatestItem alloc] initWithKeyValueMap:@{@"id" : @1}]]);
+    XCTAssertTrue([item isEqual:[[QiitarianLatestItem alloc] initWithKeyValueMap:@{@"id" : @315}]]);
 }
 
 @end
