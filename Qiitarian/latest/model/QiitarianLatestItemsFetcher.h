@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class QiitarianLatestItemList;
+
 @interface QiitarianLatestItemsFetcher : NSObject
 
-- (void)fetch:(void (^)(NSArray *))onFinishAccess;
-- (void)fetch:(void (^)(NSArray *))onFinishAccess index:(NSInteger)index;
+- (void)fetch:(void (^)(QiitarianLatestItemList *))onFinishAccess;
+- (void)fetch:(void (^)(QiitarianLatestItemList *))onFinishAccess index:(NSInteger)index;
 
 @end

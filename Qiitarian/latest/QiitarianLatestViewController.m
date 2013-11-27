@@ -9,14 +9,15 @@
 #import "QiitarianLatestViewController.h"
 #import "QiitarianLatestItemsFetcher.h"
 #import "QiitarianLatestItem.h"
+#import "QiitarianLatestItemList.h"
 
 @interface QiitarianLatestViewController () {
 @private
     int _currentPage;
     BOOL _isUpdating;
+    QiitarianLatestItemList *_qiitarianLatestItemList;
 }
 
-@property (nonatomic, strong) NSMutableArray *list;
 
 @end
 
@@ -40,7 +41,7 @@
     self.refreshControl = refreshControl;
     [self.refreshControl addTarget:self action:@selector(onRefresh:) forControlEvents:UIControlEventValueChanged];
     
-    _list = @[].mutableCopy;
+    _qiitarianLatestItemList = [[QiitarianLatestItemList alloc] initWithQiitarianList:@[]];
     _currentPage = 1;
     _isUpdating = NO;
     
@@ -48,10 +49,8 @@
     self.tableView.dataSource = self;
     
     QiitarianLatestItemsFetcher *fetcher = [[QiitarianLatestItemsFetcher alloc] init];
-    [fetcher fetch:^(NSArray *array) {
-        for (QiitarianLatestItem *item in array) {
-            [_list addObject:item.title];
-        }
+    [fetcher fetch:^(QiitarianLatestItemList *array) {
+        _qiitarianLatestItemList = array;
         [self.tableView reloadData];
     }];
 }
@@ -59,13 +58,8 @@
 - (void)onRefresh:(id)sender {
     [self.refreshControl beginRefreshing];
     QiitarianLatestItemsFetcher *fetcher = [[QiitarianLatestItemsFetcher alloc] init];
-    [fetcher fetch:^(NSArray *array) {
-        NSArray *reversed = [[array reverseObjectEnumerator] allObjects];
-        for (QiitarianLatestItem *item in reversed) {
-            if ([_list containsObject:item.title] == false) {
-                [_list insertObject:item.title atIndex:0];
-            }
-        }
+    [fetcher fetch:^(QiitarianLatestItemList *array) {
+        _qiitarianLatestItemList = [_qiitarianLatestItemList mergeToHead:array];
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
     }];
@@ -81,7 +75,7 @@
 //Table View用プロトコルの実装
 //-------------------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_list count];
+    return [_qiitarianLatestItemList.itemList count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"id"];
@@ -89,7 +83,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"id"];
     }
     
-    NSString *title = [_list objectAtIndex:indexPath.row];
+    NSString *title = ((QiitarianLatestItem *)[_qiitarianLatestItemList.itemList objectAtIndex:indexPath.row]).title;
     cell.textLabel.text = title;
     return cell;
 }
@@ -107,12 +101,8 @@
         //最下部への記事追加
         _isUpdating = YES;
         QiitarianLatestItemsFetcher *fetcer = [[QiitarianLatestItemsFetcher alloc] init];
-        [fetcer fetch:^(NSArray *array) {
-            for (QiitarianLatestItem *item in array) {
-                if ([_list containsObject:item.title] == false) {
-                    [_list addObject:item.title];
-                }
-            }
+        [fetcer fetch:^(QiitarianLatestItemList *array) {
+            _qiitarianLatestItemList = [_qiitarianLatestItemList mergeToLast:array];
             [self.tableView reloadData];
             _isUpdating = NO;
         } index:++_currentPage];
