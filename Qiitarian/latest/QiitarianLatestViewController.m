@@ -17,6 +17,8 @@
     int _currentPage;
     BOOL _isUpdating;
     QiitarianLatestItemList *_qiitarianLatestItemList;
+    
+    NSDateFormatter *_formatter;
 }
 
 
@@ -45,6 +47,9 @@
     _qiitarianLatestItemList = [[QiitarianLatestItemList alloc] initWithQiitarianList:@[]];
     _currentPage = 1;
     _isUpdating = NO;
+    
+    _formatter = [[NSDateFormatter alloc] init];
+    [_formatter setDateFormat:@"yyyy/MM/dd HH:mm"];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -86,7 +91,7 @@
     
     QiitarianLatestItem *item = (QiitarianLatestItem *)[_qiitarianLatestItemList.itemList objectAtIndex:indexPath.row];
     cell.titleLabel.text = item.title;
-    cell.dateLabel.text = item.createdAt;
+    cell.dateLabel.text = [_formatter stringFromDate:item.createdAt];
     return cell;
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {

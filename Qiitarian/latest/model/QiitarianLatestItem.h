@@ -12,7 +12,7 @@
 
 @property (nonatomic, readonly) int id;
 @property (nonatomic, readonly) NSString *title;
-@property (nonatomic, readonly) NSString *createdAt;
+@property (nonatomic, readonly) NSDate *createdAt;
 
 - (QiitarianLatestItem *) initWithKeyValueMap:(NSDictionary *)keyValueMap;
 
