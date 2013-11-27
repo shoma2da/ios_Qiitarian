@@ -84,8 +84,9 @@
         cell = [[QiitarianArticleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"articleCell"];
     }
     
-    NSString *title = ((QiitarianLatestItem *)[_qiitarianLatestItemList.itemList objectAtIndex:indexPath.row]).title;
-    cell.titleLabel.text = title;
+    QiitarianLatestItem *item = (QiitarianLatestItem *)[_qiitarianLatestItemList.itemList objectAtIndex:indexPath.row];
+    cell.titleLabel.text = item.title;
+    cell.dateLabel.text = item.createdAt;
     return cell;
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {

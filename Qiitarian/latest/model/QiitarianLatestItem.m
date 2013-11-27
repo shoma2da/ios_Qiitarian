@@ -13,6 +13,7 @@
 - (QiitarianLatestItem *)initWithKeyValueMap:(NSDictionary *)keyValueMap {
     _id = [(NSNumber *)keyValueMap[@"id"] intValue];
     _title = keyValueMap[@"title"];
+    _createdAt = keyValueMap[@"created_at"];
     return self;
 }
 
