@@ -10,6 +10,7 @@
 #import "QiitarianLatestItemsFetcher.h"
 #import "QiitarianLatestItem.h"
 #import "QiitarianLatestItemList.h"
+#import "QiitarianArticleCell.h"
 
 @interface QiitarianLatestViewController () {
 @private
@@ -78,13 +79,13 @@
     return [_qiitarianLatestItemList.itemList count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"articleCell"];
+    QiitarianArticleCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"articleCell"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"articleCell"];
+        cell = [[QiitarianArticleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"articleCell"];
     }
     
     NSString *title = ((QiitarianLatestItem *)[_qiitarianLatestItemList.itemList objectAtIndex:indexPath.row]).title;
-    cell.textLabel.text = title;
+    cell.titleLabel.text = title;
     return cell;
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
