@@ -12,6 +12,7 @@
 		34657962183F353E00812C98 /* QiitarianLatestItemsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 34657961183F353E00812C98 /* QiitarianLatestItemsFetcher.m */; };
 		34657966183F466E00812C98 /* QiitarianLatestItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 34657965183F466E00812C98 /* QiitarianLatestItem.m */; };
 		347743F81844A04E007014DC /* QiitarianLatestItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 347743F71844A04E007014DC /* QiitarianLatestItemTest.m */; };
+		34810435184619680097921A /* QiitarianArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34810434184619680097921A /* QiitarianArticleCell.m */; };
 		34C053301833AED5005A4E33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C0532F1833AED5005A4E33 /* Foundation.framework */; };
 		34C053321833AED5005A4E33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C053311833AED5005A4E33 /* CoreGraphics.framework */; };
 		34C053341833AED5005A4E33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C053331833AED5005A4E33 /* UIKit.framework */; };
@@ -46,6 +47,8 @@
 		34657964183F466E00812C98 /* QiitarianLatestItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QiitarianLatestItem.h; path = latest/model/QiitarianLatestItem.h; sourceTree = "<group>"; };
 		34657965183F466E00812C98 /* QiitarianLatestItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QiitarianLatestItem.m; path = latest/model/QiitarianLatestItem.m; sourceTree = "<group>"; };
 		347743F71844A04E007014DC /* QiitarianLatestItemTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QiitarianLatestItemTest.m; path = latest/model/QiitarianLatestItemTest.m; sourceTree = "<group>"; };
+		34810433184619680097921A /* QiitarianArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QiitarianArticleCell.h; path = latest/QiitarianArticleCell.h; sourceTree = "<group>"; };
+		34810434184619680097921A /* QiitarianArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QiitarianArticleCell.m; path = latest/QiitarianArticleCell.m; sourceTree = "<group>"; };
 		34C0532C1833AED5005A4E33 /* Qiitarian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qiitarian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C0532F1833AED5005A4E33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		34C053311833AED5005A4E33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -104,6 +107,8 @@
 				34C84081183A417700C66BE9 /* QiitarianLatestViewController.h */,
 				34C84082183A417700C66BE9 /* QiitarianLatestViewController.m */,
 				34657963183F354800812C98 /* model */,
+				34810433184619680097921A /* QiitarianArticleCell.h */,
+				34810434184619680097921A /* QiitarianArticleCell.m */,
 			);
 			name = latest;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 				34657962183F353E00812C98 /* QiitarianLatestItemsFetcher.m in Sources */,
 				34657966183F466E00812C98 /* QiitarianLatestItem.m in Sources */,
 				342535EE1843685C00A9AC67 /* QiitarianLatestItemList.m in Sources */,
+				34810435184619680097921A /* QiitarianArticleCell.m in Sources */,
 				34C0533C1833AED5005A4E33 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
