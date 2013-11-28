@@ -13,6 +13,11 @@
 - (QiitarianLatestItem *)initWithKeyValueMap:(NSDictionary *)keyValueMap {
     _id = [(NSNumber *)keyValueMap[@"id"] intValue];
     _title = keyValueMap[@"title"];
+    
+    //日付
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss ZZZZ"];
+    _createdAt = [formatter dateFromString:keyValueMap[@"created_at"]];
     return self;
 }
 

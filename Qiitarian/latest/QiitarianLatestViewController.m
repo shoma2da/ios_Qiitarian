@@ -10,12 +10,15 @@
 #import "QiitarianLatestItemsFetcher.h"
 #import "QiitarianLatestItem.h"
 #import "QiitarianLatestItemList.h"
+#import "QiitarianArticleCell.h"
 
 @interface QiitarianLatestViewController () {
 @private
     int _currentPage;
     BOOL _isUpdating;
     QiitarianLatestItemList *_qiitarianLatestItemList;
+    
+    NSDateFormatter *_formatter;
 }
 
 
@@ -44,6 +47,9 @@
     _qiitarianLatestItemList = [[QiitarianLatestItemList alloc] initWithQiitarianList:@[]];
     _currentPage = 1;
     _isUpdating = NO;
+    
+    _formatter = [[NSDateFormatter alloc] init];
+    [_formatter setDateFormat:@"yyyy/MM/dd HH:mm"];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -78,13 +84,14 @@
     return [_qiitarianLatestItemList.itemList count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"id"];
+    QiitarianArticleCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"articleCell"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"id"];
+        cell = [[QiitarianArticleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"articleCell"];
     }
     
-    NSString *title = ((QiitarianLatestItem *)[_qiitarianLatestItemList.itemList objectAtIndex:indexPath.row]).title;
-    cell.textLabel.text = title;
+    QiitarianLatestItem *item = (QiitarianLatestItem *)[_qiitarianLatestItemList.itemList objectAtIndex:indexPath.row];
+    cell.titleLabel.text = item.title;
+    cell.dateLabel.text = [_formatter stringFromDate:item.createdAt];
     return cell;
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
