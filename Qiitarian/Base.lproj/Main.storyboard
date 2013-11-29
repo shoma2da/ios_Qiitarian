@@ -15,7 +15,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="IY7-sK-N3N" kind="relationship" relationship="viewControllers" id="ISW-Vc-Ifc"/>
+                        <segue destination="XI2-2G-X2Z" kind="relationship" relationship="viewControllers" id="ISW-Vc-Ifc"/>
                         <segue destination="ycn-Go-d8Q" kind="relationship" relationship="viewControllers" id="Pu0-6w-3jf"/>
                         <segue destination="4Ew-FM-Qwl" kind="relationship" relationship="viewControllers" id="xdx-tv-0Ff"/>
                         <segue destination="7SI-8K-rCi" kind="relationship" relationship="viewControllers" id="y8C-t5-PFD"/>
@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-1060" y="134"/>
         </scene>
-        <!--Qiitarian Latest View Controller - 最新情報-->
+        <!--Qiitarian Latest View Controller-->
         <scene sceneID="0Pj-bW-oGx">
             <objects>
                 <tableViewController id="IY7-sK-N3N" customClass="QiitarianLatestViewController" sceneMemberID="viewController">
@@ -35,7 +35,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="articleCell" rowHeight="106" id="g0q-PX-2Be" customClass="QiitarianArticleCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="106"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g0q-PX-2Be" id="eEb-YB-0Ld">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="105"/>
@@ -60,7 +60,7 @@
                                 <connections>
                                     <outlet property="dateLabel" destination="3HE-Iz-SIM" id="cEW-es-JOH"/>
                                     <outlet property="titleLabel" destination="agr-1R-ddM" id="Scc-Gl-pMd"/>
-                                    <segue destination="zRe-vc-Wfv" kind="modal" id="hCs-7c-tWE"/>
+                                    <segue destination="zRe-vc-Wfv" kind="push" id="jLN-0r-hR3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -69,11 +69,11 @@
                             <outlet property="delegate" destination="IY7-sK-N3N" id="NEe-E9-JRd"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="最新情報" id="R6s-FT-pSS"/>
+                    <navigationItem key="navigationItem" id="ZPn-Lt-rJh"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfs-qW-Dba" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-542" y="-190"/>
+            <point key="canvasLocation" x="-36" y="-350"/>
         </scene>
         <!--View Controller - Item-->
         <scene sceneID="KY5-O4-Vmb">
@@ -130,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rM-yx-bSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="-150"/>
+            <point key="canvasLocation" x="666" y="-150"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="vBz-Hf-F9d">
@@ -149,7 +149,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Hc-3S-Iso" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11" y="-829"/>
+            <point key="canvasLocation" x="537" y="-829"/>
+        </scene>
+        <!--Navigation Controller - 最新情報-->
+        <scene sceneID="1Ny-y3-4hR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XI2-2G-X2Z" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="最新情報" id="R6s-FT-pSS"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qwf-QM-pAe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IY7-sK-N3N" kind="relationship" relationship="rootViewController" id="MGr-dK-NY4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S9q-G8-dLO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-542" y="-190"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
