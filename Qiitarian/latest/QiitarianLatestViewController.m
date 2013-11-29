@@ -120,8 +120,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"go_detail"]) {
+        QiitarianLatestItem *item = _qiitarianLatestItemList.itemList[self.tableView.indexPathForSelectedRow.row];
+        
+        
         QiitarianDetailViewController *next = segue.destinationViewController;
-        next.uuid = @"abc";
+        next.uuid = item.uuid;
     }
 }
 
