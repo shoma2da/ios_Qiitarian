@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		340FFDF6183432340026702E /* sample_shomatsu.png in Resources */ = {isa = PBXBuildFile; fileRef = 340FFDF5183432340026702E /* sample_shomatsu.png */; };
+		341A9CB21848DCFA000A79EE /* QiitarianDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 341A9CB11848DCFA000A79EE /* QiitarianDetailViewController.m */; };
 		342535EE1843685C00A9AC67 /* QiitarianLatestItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = 342535ED1843685C00A9AC67 /* QiitarianLatestItemList.m */; };
 		34657962183F353E00812C98 /* QiitarianLatestItemsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 34657961183F353E00812C98 /* QiitarianLatestItemsFetcher.m */; };
 		34657966183F466E00812C98 /* QiitarianLatestItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 34657965183F466E00812C98 /* QiitarianLatestItem.m */; };
@@ -40,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		340FFDF5183432340026702E /* sample_shomatsu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sample_shomatsu.png; path = Images/sample_shomatsu.png; sourceTree = "<group>"; };
+		341A9CB01848DCFA000A79EE /* QiitarianDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QiitarianDetailViewController.h; path = detail/QiitarianDetailViewController.h; sourceTree = "<group>"; };
+		341A9CB11848DCFA000A79EE /* QiitarianDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QiitarianDetailViewController.m; path = detail/QiitarianDetailViewController.m; sourceTree = "<group>"; };
 		342535EC1843685C00A9AC67 /* QiitarianLatestItemList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QiitarianLatestItemList.h; path = latest/model/QiitarianLatestItemList.h; sourceTree = "<group>"; };
 		342535ED1843685C00A9AC67 /* QiitarianLatestItemList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QiitarianLatestItemList.m; path = latest/model/QiitarianLatestItemList.m; sourceTree = "<group>"; };
 		34657960183F353E00812C98 /* QiitarianLatestItemsFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QiitarianLatestItemsFetcher.h; path = latest/model/QiitarianLatestItemsFetcher.h; sourceTree = "<group>"; };
@@ -113,6 +116,15 @@
 			name = latest;
 			sourceTree = "<group>";
 		};
+		341A9CB31848DD00000A79EE /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				341A9CB01848DCFA000A79EE /* QiitarianDetailViewController.h */,
+				341A9CB11848DCFA000A79EE /* QiitarianDetailViewController.m */,
+			);
+			name = detail;
+			sourceTree = "<group>";
+		};
 		34657963183F354800812C98 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +193,7 @@
 				34C053411833AED5005A4E33 /* Main.storyboard */,
 				34C053471833AED5005A4E33 /* Images.xcassets */,
 				34C053361833AED5005A4E33 /* Supporting Files */,
+				341A9CB31848DD00000A79EE /* detail */,
 			);
 			path = Qiitarian;
 			sourceTree = "<group>";
@@ -320,6 +333,7 @@
 				34657966183F466E00812C98 /* QiitarianLatestItem.m in Sources */,
 				342535EE1843685C00A9AC67 /* QiitarianLatestItemList.m in Sources */,
 				34810435184619680097921A /* QiitarianArticleCell.m in Sources */,
+				341A9CB21848DCFA000A79EE /* QiitarianDetailViewController.m in Sources */,
 				34C0533C1833AED5005A4E33 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

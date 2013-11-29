@@ -132,10 +132,10 @@
             </objects>
             <point key="canvasLocation" x="666" y="-150"/>
         </scene>
-        <!--View Controller-->
+        <!--Qiitarian Detail View Controller-->
         <scene sceneID="vBz-Hf-F9d">
             <objects>
-                <viewController id="zRe-vc-Wfv" sceneMemberID="viewController">
+                <viewController id="zRe-vc-Wfv" customClass="QiitarianDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MMK-gr-6pA"/>
                         <viewControllerLayoutGuide type="bottom" id="bhT-jx-55s"/>
