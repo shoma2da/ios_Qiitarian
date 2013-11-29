@@ -13,6 +13,7 @@
 - (QiitarianLatestItem *)initWithKeyValueMap:(NSDictionary *)keyValueMap {
     _id = [(NSNumber *)keyValueMap[@"id"] intValue];
     _title = keyValueMap[@"title"];
+    _uuid = keyValueMap[@"uuid"];
     
     //日付
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];

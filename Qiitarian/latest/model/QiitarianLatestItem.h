@@ -11,6 +11,7 @@
 @interface QiitarianLatestItem : NSObject
 
 @property (nonatomic, readonly) int id;
+@property (nonatomic, readonly) NSString *uuid;
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) NSDate *createdAt;
 
