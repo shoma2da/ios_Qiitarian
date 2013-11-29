@@ -28,7 +28,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    NSLog(@"uuid is %@", _uuid);
+    [_uuidLabel setText:_uuid];
 }
 
 - (void)didReceiveMemoryWarning

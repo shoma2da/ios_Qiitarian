@@ -11,5 +11,6 @@
 @interface QiitarianDetailViewController : UIViewController
 
 @property (nonatomic) NSString *uuid;
+@property (weak, nonatomic) IBOutlet UILabel *uuidLabel;
 
 @end
