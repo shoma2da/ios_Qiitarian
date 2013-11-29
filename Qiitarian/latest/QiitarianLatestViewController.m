@@ -85,12 +85,12 @@
     return [_qiitarianLatestItemList.itemList count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    QiitarianArticleCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"articleCell"];
+    QiitarianArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:@"articleCell"];
     if (cell == nil) {
         cell = [[QiitarianArticleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"articleCell"];
     }
     
-    QiitarianLatestItem *item = (QiitarianLatestItem *)[_qiitarianLatestItemList.itemList objectAtIndex:indexPath.row];
+    QiitarianLatestItem *item = _qiitarianLatestItemList.itemList[indexPath.row];
     cell.titleLabel.text = item.title;
     cell.dateLabel.text = [_formatter stringFromDate:item.createdAt];
     return cell;
