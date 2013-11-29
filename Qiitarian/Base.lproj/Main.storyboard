@@ -60,7 +60,7 @@
                                 <connections>
                                     <outlet property="dateLabel" destination="3HE-Iz-SIM" id="cEW-es-JOH"/>
                                     <outlet property="titleLabel" destination="agr-1R-ddM" id="Scc-Gl-pMd"/>
-                                    <segue destination="zRe-vc-Wfv" kind="push" id="jLN-0r-hR3"/>
+                                    <segue destination="zRe-vc-Wfv" kind="push" identifier="go_detail" id="jLN-0r-hR3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

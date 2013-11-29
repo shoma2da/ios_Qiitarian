@@ -11,6 +11,7 @@
 #import "QiitarianLatestItem.h"
 #import "QiitarianLatestItemList.h"
 #import "QiitarianArticleCell.h"
+#import "QiitarianDetailViewController.h";
 
 @interface QiitarianLatestViewController () {
 @private
@@ -116,5 +117,12 @@
     }
 }
 //-------------------------
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"go_detail"]) {
+        QiitarianDetailViewController *next = segue.destinationViewController;
+        next.uuid = @"abc";
+    }
+}
 
 @end
